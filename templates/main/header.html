@@ -1,0 +1,17 @@
+<div class="branding">
+    <a class="link branding__link" href="/">Deerain`s</a>
+</div>
+
+<nav class="list--horizontal nav">
+    {% url 'main:home' as home_url %}
+    <div class="list__item nav__item {% if request.path == home_url %}nav__item--active{% endif %}"><a class="link nav_link" href="{{ home_url }}">Главная</a></div>
+    <div class="list__item nav__item"><a class="link nav_link" href="{% url 'main:home' %}">Портфолио</a></div>
+    <div class="list__item nav__item"><a class="link nav_link" href="{% url 'main:home' %}">О себе</a></div>
+    <div class="list__item nav__item"><a class="link nav_link" href="{% url 'main:home' %}">Контакты</a></div>
+</nav>
+
+<form class="form search_form" action="">
+    {% csrf_token %}
+    <input class="input" type="text" name="search" id="search-field">
+    <input class="btn" type="submit"></input>
+</form>

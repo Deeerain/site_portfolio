@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block body_content %}
+
+{% block header %}
+<header class="list--horizontal header">
+{% block header_content %}
+{% include 'main/header.html' %}
+{% endblock %}
+</header>
+{% endblock %}
+
+<div class="list--horizontal container">
+    <main class="list content">
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+    {% block sidebar %}
+    <aside class="list sidebar">
+        {% block sidebar_content %}
+        {% include 'main/sidebar.html' %}
+        {% endblock %}
+    </aside>
+    {% endblock sidebar %}
+</div>
+
+{% block footer %}
+<footer class="list footer">
+{% block footer_content %}
+{% include 'main/footer.html' %}
+{% endblock %}
+</footer>
+{% endblock %}
+
+{% endblock %}

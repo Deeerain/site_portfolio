@@ -1,0 +1,134 @@
+:root {
+    --background-color: rgb(249, 249, 255);
+    --header-bg-color: rgb(59, 24, 95);
+    --shadow-color: rgba(214, 214, 230, 0.267);
+    --header-height: 70px;
+    --corners: 1rem;
+    --paddings: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.shadow {
+    box-shadow: 0 2px 15px 5px var(--shadow-color);
+}
+
+.rounded {
+    border-radius: var(--corners);
+}
+
+/* LISTS */
+.list,
+.list--horizontal {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.list {
+    flex-direction: column;
+}
+
+.list--horizontal {
+    flex-direction: row;
+    align-items: center;
+}
+
+.list__item {
+    padding: 10px;
+}
+/* END LISTS */
+
+/* FORMS */
+.form {
+    padding: var(--paddings);
+}
+
+.input,
+.btn {
+    background: none;
+    outline: none;
+    border: none;
+    padding: var(--paddings);
+}
+
+.btn {
+    cursor: pointer;
+}
+/* END FORMS */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+}
+
+.container {
+    width: 1366px;
+    margin: 0 auto;
+    margin-top: calc(1rem + var(--header-height));
+    gap: 1.5rem;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+
+.header,
+.footer {
+    background: var(--header-bg-color);
+    position: relative;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    justify-content: space-around;
+    background: var(--header-bg-color);
+    height: var(--header-height);
+}
+
+.branding__link,
+.nav_link{
+    color: white;
+}
+
+.branding__link {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.nav__item--active {
+    border-bottom: 1px solid var(--shadow-color);
+}
+
+.sidebar {
+    width: 40%;
+}
+
+.footer {
+    padding: 10px;
+    align-items: center;
+}
+
+/* POSTS */
+.post {
+    padding: 10px;
+}
+
+.post__image {
+    width: 150px;
+    height: 150px;
+}
+/* END POSTS */
