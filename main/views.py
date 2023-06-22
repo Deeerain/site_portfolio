@@ -9,7 +9,3 @@ class HomeView(generic.ListView):
 
     def get_queryset(self):
         return blog_services.post_all().filter(visible=True)
-
-
-class PostDetail(generic.DetailView):
-    model = blog_services.models.Post
