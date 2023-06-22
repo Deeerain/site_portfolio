@@ -1,0 +1,12 @@
+{% extends 'main/base_site.html' %}
+
+{% block subtitle %}Работы{% endblock %}
+
+{% block content %}
+<div class="list">
+    <article class="list__item">
+        <h2>{{ object.title }}</h2>
+        <div>{{ object.content|safe}}</div>
+    </article>
+</div>
+{% endblock %}

@@ -7,6 +7,7 @@ class WorkAdmin(admin.ModelAdmin):
     list_display = ('title', 'created', 'updated', 'visible')
     list_editable = ('visible',)
     list_filter = ('created', 'updated', 'visible')
+    prepopulated_fields = {'slug': ('title',)}
 
 
 @admin.register(models.Language)

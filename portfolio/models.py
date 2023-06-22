@@ -28,7 +28,7 @@ class Work(models.Model):
     title = models.CharField('Название', max_length=100, unique=True,
                              db_index=True)
     content = RichTextField()
-    github = models.URLField('Github', null=True, db_index=True)
+    github = models.URLField('Github', null=True, db_index=True, blank=True)
     languages = models.ManyToManyField(Language, verbose_name='Языки')
     technologies = models.ManyToManyField(Technology,
                                           verbose_name='Технологии')

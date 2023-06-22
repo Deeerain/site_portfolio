@@ -1,0 +1,16 @@
+{% extends 'main/base_site.html' %}
+
+{% block subtitle %}Работы{% endblock %}
+
+{% block content %}
+{% for item in object_list %}
+<div class="list">
+    <article class="list__item">
+        <h2><a href="{% url 'portfolio:work-detail' slug=item.slug %}">{{ item.title }}</a></h2>
+        <div>{{ item.content|safe|slice:":30" }}</div>
+    </article>
+</div>
+{% empty %}
+<p>Тут пока пусто.</p>
+{% endfor %}
+{% endblock %}

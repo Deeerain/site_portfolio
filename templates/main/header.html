@@ -4,8 +4,9 @@
 
 <nav class="list--horizontal nav">
     {% url 'blog:post-list' as home_url %}
+    {% url 'portfolio:work-list' as work_list_url %}
     <div class="list__item nav__item {% if request.path == home_url %}nav__item--active{% endif %}"><a class="link nav_link" href="{{ home_url }}">Главная</a></div>
-    <div class="list__item nav__item"><a class="link nav_link" href="{% url 'blog:post-list' %}">Портфолио</a></div>
+    <div class="list__item nav__item {% if request.path == work_list_url %}nav__item--active{% endif %}"><a class="link nav_link" href="{{ work_list_url }}">Портфолио</a></div>
     <div class="list__item nav__item"><a class="link nav_link" href="{% url 'blog:post-list' %}">О себе</a></div>
     <div class="list__item nav__item"><a class="link nav_link" href="{% url 'blog:post-list' %}">Контакты</a></div>
 </nav>
