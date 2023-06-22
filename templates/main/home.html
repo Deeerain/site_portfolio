@@ -7,9 +7,9 @@
 <article class="post shadow rounded">
     <img class="img post__image" src="{{ item.image }}" alt="">
     <span class="post__info">
-        <a href="">Заметки</a> {{ item.created|date }}
+        <a href="">{{item.rubric}}</a> {{ item.created|date }}
     </span>
-    <h2 class="post__title"><a href="">{{ item.title }}</a></h2>
+    <h2 class="post__title"><a href="{% url 'main:post_detail' slug=item.slug %}">{{ item.title }}</a></h2>
     <div class="post__content">
         {{ item.content|safe|slice:":500" }}...
     </div>

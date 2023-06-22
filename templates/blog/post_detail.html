@@ -1,0 +1,16 @@
+{% extends 'main/base_site.html' %}
+
+{% block subtitle %}{{ object.title }}{% endblock %}
+
+{% block content %}
+<article class="post shadow rounded">
+    <img class="img post__image" src="{{ object.image }}" alt="">
+    <span class="post__info">
+        <a href="">Заметки</a> {{ object.created|date }}
+    </span>
+    <h2 class="post__title"><a href="">{{ object.title }}</a></h2>
+    <div class="post__content">
+        {{ object.content|safe}}
+    </div>
+</article>
+{% endblock %}

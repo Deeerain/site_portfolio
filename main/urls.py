@@ -9,6 +9,6 @@ from main import views
 app_name = "main"
 
 urlpatterns = [
-    path('', views.HomeView.as_view(), name='home')
+    path('', views.HomeView.as_view(), name='home'),
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]
-
