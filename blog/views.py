@@ -3,7 +3,6 @@ from blog import services as blog_services
 
 
 class PostList(generic.ListView):
-    template_name = 'main/home.html'
     model = blog_services.models.Post
 
     def get_queryset(self):
