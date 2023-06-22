@@ -3,70 +3,18 @@
 {% block subtitle %}Главаня{% endblock %}
 
 {% block content %}
+{% for item in object_list %}
 <article class="post shadow rounded">
-    <img class="img post__image" src="" alt="">
+    <img class="img post__image" src="{{ item.image }}" alt="">
     <span class="post__info">
-        <a href="">Заметки</a> 12 апреля 2023
+        <a href="">Заметки</a> {{ item.created|date }}
     </span>
-    <h2 class="post__title">Lorem ipsum dolor sit amet.</h2>
+    <h2 class="post__title"><a href="">{{ item.title }}</a></h2>
     <div class="post__content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, obcaecati tenetur, illo provident fugit aut dolor quae eligendi molestias quidem voluptates magni voluptate in vero!
+        {{ item.content|safe|slice:":500" }}...
     </div>
 </article>
-
-<article class="post shadow rounded">
-    <img class="img post__image" src="" alt="">
-    <span class="post__info">
-        <a href="">Заметки</a> 12 апреля 2023
-    </span>
-    <h2 class="post__title">Lorem ipsum dolor sit amet.</h2>
-    <div class="post__content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, obcaecati tenetur, illo provident fugit aut dolor quae eligendi molestias quidem voluptates magni voluptate in vero!
-    </div>
-</article>
-
-<article class="post shadow rounded">
-    <img class="img post__image" src="" alt="">
-    <span class="post__info">
-        <a href="">Заметки</a> 12 апреля 2023
-    </span>
-    <h2 class="post__title">Lorem ipsum dolor sit amet.</h2>
-    <div class="post__content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, obcaecati tenetur, illo provident fugit aut dolor quae eligendi molestias quidem voluptates magni voluptate in vero!
-    </div>
-</article>
-
-<article class="post shadow rounded">
-    <img class="img post__image" src="" alt="">
-    <span class="post__info">
-        <a href="">Заметки</a> 12 апреля 2023.
-    </span>
-    <h2 class="post__title">Lorem ipsum dolor sit amet.</h2>
-    <div class="post__content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, obcaecati tenetur, illo provident fugit aut dolor quae eligendi molestias quidem voluptates magni voluptate in vero!
-    </div>
-</article>
-
-<article class="post shadow rounded">
-    <img class="img post__image" src="" alt="">
-    <span class="post__info">
-        <a href="">Заметки</a> 12 апреля 2023
-    </span>
-    <h2 class="post__title">Lorem ipsum dolor sit amet.</h2>
-    <div class="post__content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, obcaecati tenetur, illo provident fugit aut dolor quae eligendi molestias quidem voluptates magni voluptate in vero!
-    </div>
-</article>
-
-<article class="post shadow rounded">
-    <img class="img post__image" src="" alt="">
-    <span class="post__info">
-        <a href="">Заметки</a> 12 апреля 2023
-    </span>
-    <h2 class="post__title">Lorem ipsum dolor sit amet.</h2>
-    <div class="post__content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, obcaecati tenetur, illo provident fugit aut dolor quae eligendi molestias quidem voluptates magni voluptate in vero!
-    </div>
-</article>
-
+{% empty %}
+<p>Тут пока пусто.</p>
+{% endfor %}
 {% endblock %}
